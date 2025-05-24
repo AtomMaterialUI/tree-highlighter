@@ -67,5 +67,6 @@
     <resource-bundle>messages.ProjectTreeBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.github.mallowigi.treehighlighter.ProjectTreeConfigState"/>
     </extensions>
 </idea-plugin>
