@@ -68,5 +68,6 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.mallowigi.treehighlighter.ProjectTreeConfigState"/>
+        <editorTabColorProvider implementation="com.github.mallowigi.treehighlighter.providers.ColorProvider" order="first"/>
     </extensions>
 </idea-plugin>
