@@ -1,15 +1,72 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.mallowigi.treehighlighter</id>
-    <name>tree-highlighter</name>
-    <vendor>mallowigi</vendor>
+    <name>Project Tree Highlighter</name>
+    <version>@version@</version>
+    <category>UI</category>
+    <vendor email="elior@material-theme.com" url="https://github.com/mallowigi">Pavel Barykin and Elior Boukhobza</vendor>
+
+    <description><![CDATA[
+        Highlights your project files and folders in colors.
+        <br/>
+        <br/>
+
+        <img src="https://raw.githubusercontent.com/pnbarx/idea-treecolor/master/images/highlight-menu.png" alt="Highlight menu">
+        <br/>
+        <br/>
+
+        When you are working on a large complex project you may need to highlight
+        some of its parts in different colors.
+        <br/>
+        <br/>
+
+        Previously, there was only one way to do this:
+        create a scope, specify its name and filename pattern, then add a color
+        and attach it to the created scope, then click <code>Ok</code> and <code>Apply</code>
+        to see how it looks now. If the color doesn't fit, double-click it, select a new color,
+        click <code>OK</code> and <code>Apply</code> again to see the changes. If the color
+        doesn't fit again - repeat until it fits.
+        This is a rather inconvenient way (and takes a lot of time).
+        <br/>
+        <br/>
+
+        <strong>ProjectTree Color Highlighter</strong> was made to get rid of this inconvenience.
+        Highlight your files and folders with ease using the context menu. Adjust the colors
+        using the color picker, get an instant preview of the project tree and editor tabs
+        while adjusting.
+        <br/>
+        <br/>
+
+        <img src="https://raw.githubusercontent.com/pnbarx/idea-treecolor/master/images/color-adjustment.gif" alt="Color adjustment">
+        <br/>
+        <br/>
+
+        All settings are persistently stored in the <code>
+            <nobr>.idea/highlightedFiles.xml</nobr>
+        </code>,
+        so you can read and change it externally, clone or copy-paste to other projects, etc.
+        (This allows you to create various project boilerplates with predefined highlighting settings.)
+        <br/>
+        <br/>
+
+        <img src="https://raw.githubusercontent.com/pnbarx/idea-treecolor/master/images/config-file.png" alt="Config file">
+        <br/>
+        <br/>
+        <br/>
+
+        Enjoy and write a lot of awesome code!
+        <br/>
+        <br/>
+        ]]></description>
+
+    <change-notes/>
 
     <depends>com.intellij.modules.platform</depends>
+    <incompatible-with>com.intellij.modules.rider</incompatible-with>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <resource-bundle>messages.ProjectTreeBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.mallowigi.treehighlighter.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.mallowigi.treehighlighter.startup.MyProjectActivity" />
+
     </extensions>
 </idea-plugin>
