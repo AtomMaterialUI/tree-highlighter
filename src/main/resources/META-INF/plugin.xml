@@ -67,7 +67,8 @@
     <resource-bundle>messages.ProjectTreeBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.mallowigi.treehighlighter.ProjectTreeConfigState"/>
+        <applicationService serviceImplementation="com.github.mallowigi.treehighlighter.AppTreeConfigState"/>
+        <projectService serviceImplementation="com.github.mallowigi.treehighlighter.services.ProjectTreeConfigState"/>
         <editorTabColorProvider implementation="com.github.mallowigi.treehighlighter.providers.ColorProvider" order="first"/>
     </extensions>
 </idea-plugin>

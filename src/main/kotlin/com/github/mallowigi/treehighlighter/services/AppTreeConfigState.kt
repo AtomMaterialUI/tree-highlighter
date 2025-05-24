@@ -1,4 +1,4 @@
-package com.github.mallowigi.treehighlighter
+package com.github.mallowigi.treehighlighter.services
 
 import com.github.mallowigi.treehighlighter.models.ColorSettings
 import com.intellij.openapi.components.*
@@ -6,7 +6,7 @@ import com.intellij.util.xmlb.annotations.XCollection
 
 @State(name = "ProjectTreeHighlighter", storages = [Storage("projectTreeHighlighter.xml")])
 @Service(Service.Level.APP)
-internal class ProjectTreeConfigState : SimplePersistentStateComponent<ProjectTreeConfigState.State>(State()) {
+internal class AppTreeConfigState : SimplePersistentStateComponent<AppTreeConfigState.State>(State()) {
   class State : BaseState() {
     var marksForCollapsedHighlights: String? by string("")
 
@@ -26,7 +26,7 @@ internal class ProjectTreeConfigState : SimplePersistentStateComponent<ProjectTr
       state.colorList = value
     }
 
-  fun apply(state: ProjectTreeConfigState) {
+  fun apply(state: AppTreeConfigState) {
     this.marksForCollapsedHighlights = state.marksForCollapsedHighlights
     this.colorList.clear()
     this.colorList.addAll(state.colorList)
@@ -37,8 +37,8 @@ internal class ProjectTreeConfigState : SimplePersistentStateComponent<ProjectTr
     this.colorList.clear()
   }
 
-  fun clone(): ProjectTreeConfigState {
-    val clone = ProjectTreeConfigState()
+  fun clone(): AppTreeConfigState {
+    val clone = AppTreeConfigState()
     clone.marksForCollapsedHighlights = this.marksForCollapsedHighlights
     clone.colorList.addAll(this.colorList)
     return clone
@@ -46,7 +46,7 @@ internal class ProjectTreeConfigState : SimplePersistentStateComponent<ProjectTr
 
   override fun equals(other: Any?): Boolean {
     if (this === other) return true
-    if (other !is ProjectTreeConfigState) return false
+    if (other !is AppTreeConfigState) return false
     return marksForCollapsedHighlights == other.marksForCollapsedHighlights &&
       colorList == other.colorList
   }
@@ -59,7 +59,7 @@ internal class ProjectTreeConfigState : SimplePersistentStateComponent<ProjectTr
 
   companion object {
     @JvmStatic
-    val instance: ProjectTreeConfigState
+    val instance: AppTreeConfigState
       get() = service()
   }
 }
