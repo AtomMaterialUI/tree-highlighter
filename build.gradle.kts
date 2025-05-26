@@ -57,7 +57,7 @@ repositories {
 
 // Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 dependencies {
-  detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
+  detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.8")
   implementation("commons-io:commons-io:2.14.0")
   implementation("com.thoughtworks.xstream:xstream:1.4.21")
 
